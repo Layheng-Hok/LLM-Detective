@@ -4,6 +4,7 @@ datasets
 ### Pretrained and Fine-tuned Models ###
 pretrained
 finetuned
+checkpoints
 
 ### Helper Files ###
 prompt.py
