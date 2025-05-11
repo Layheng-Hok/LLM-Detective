@@ -1,2 +1,6 @@
 ### Dataset ###
-ghostbuster-data_reformed
+datasets
+
+### Helper Files ###
+prompt.py
+prompt.txt
