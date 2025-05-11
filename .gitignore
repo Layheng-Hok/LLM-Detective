@@ -1,6 +1,11 @@
-### Dataset ###
+### Datasets ###
 datasets
+
+### Pretrained and Fine-tuned Models ###
+pretrained
+finetuned
 
 ### Helper Files ###
 prompt.py
 prompt.txt
+*.sh
