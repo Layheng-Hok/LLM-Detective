@@ -48,4 +48,4 @@ with open('./datasets/ghostbuster-data_split/test.jsonl', 'w') as f:
     for item in test_data:
         f.write(json.dumps(item) + '\n')
 
-print("Preprocessing complete. Datasets saved as train.jsonl, val.jsonl, and test.jsonl.")
+print("Preprocessing complete. Datasets saved as train.jsonl, val.jsonl, and test.jsonl to ./datasets/ghostbuster-data_split.")
