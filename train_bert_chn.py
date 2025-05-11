@@ -5,13 +5,13 @@ from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_sc
 from scipy.special import softmax
 
 # Load datasets
-train_dataset = load_dataset('json', data_files='./datasets/ghostbuster-data_split/train.jsonl')['train']
-val_dataset = load_dataset('json', data_files='./datasets/ghostbuster-data_split/val.jsonl')['train']
+train_dataset = load_dataset('json', data_files='./datasets/face2_zh_split/train.jsonl')['train']
+val_dataset = load_dataset('json', data_files='./datasets/face2_zh_split/val.jsonl')['train']
 
 # Load tokenizer and model
-tokenizer = BertTokenizer.from_pretrained('./pretrained/bert-base-uncased')
-model = BertForSequenceClassification.from_pretrained('./pretrained/bert-base-uncased', num_labels=2)
-model.to('cuda')  
+tokenizer = BertTokenizer.from_pretrained('./pretrained/bert-base-chinese')
+model = BertForSequenceClassification.from_pretrained('./pretrained/bert-base-chinese', num_labels=2)
+model.to('cuda')
 print(f"Model is on device: {next(model.parameters()).device}")
 
 # Tokenize datasets
@@ -29,7 +29,7 @@ val_dataset.set_format('torch', columns=['input_ids', 'attention_mask', 'label']
 def compute_metrics(pred):
     labels = pred.label_ids
     preds = pred.predictions.argmax(-1)
-    probas = softmax(pred.predictions, axis=1)[:,1]
+    probas = softmax(pred.predictions, axis=1)[:, 1]
     return {
         'accuracy': accuracy_score(labels, preds),
         'precision': precision_score(labels, preds),
@@ -40,7 +40,7 @@ def compute_metrics(pred):
 
 # Training arguments
 training_args = TrainingArguments(
-    output_dir='./checkpoints/bert-eng',
+    output_dir='./checkpoints/bert-chn',
     num_train_epochs=10,
     per_device_train_batch_size=16,
     per_device_eval_batch_size=16,
@@ -66,7 +66,7 @@ trainer = Trainer(
 trainer.train()
 
 # Save the model
-trainer.save_model('./finetuned/bert-eng')
-tokenizer.save_pretrained('./finetuned/bert-eng')
+trainer.save_model('./finetuned/bert-chn')
+tokenizer.save_pretrained('./finetuned/bert-chn')
 
-print("Training complete. Model saved to ./finetuned/bert-eng.")
+print("Training complete. Model saved to ./finetuned/bert-chn.")
