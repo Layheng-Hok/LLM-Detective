@@ -69,4 +69,4 @@ trainer.train()
 trainer.save_model('./finetuned/bert-eng')
 tokenizer.save_pretrained('./finetuned/bert-eng')
 
-print("Training complete. Model saved to ./fine_tuned/bert-eng.")
+print("Training complete. Model saved to ./finetuned/bert-eng.")
