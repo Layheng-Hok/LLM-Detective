@@ -2,6 +2,13 @@ import json
 import os
 from sklearn.model_selection import train_test_split
 
+# Clean function
+def clean_text(text):
+    text = " ".join(text.split())
+    text = text.replace("\n", " ").replace("\r", " ").replace("\t", " ")
+    return text
+
+# Data loading function
 def load_texts(domain, label):
     """Load texts for a given domain and label (0 for human, 1 for generated)."""
     if domain == "news":
@@ -20,12 +27,12 @@ def load_texts(domain, label):
         file_path = f'./datasets/face2_zh_json/human/zh_unicode/{human_file}'
         with open(file_path, 'r', encoding='utf-8') as f:
             data = json.load(f)
-        texts = [item["input"] + item["output"] for item in data]
+        texts = [clean_text(item["input"] + item["output"]) for item in data]
     elif label == 1:  # LLM-generated
         file_path = f'./datasets/face2_zh_json/generated/zh_qwen2/{generated_file}'
         with open(file_path, 'r', encoding='utf-8') as f:
             data = json.load(f)
-        texts = [data["input"][key] + data["output"][key] for key in data["input"]]
+        texts = [clean_text(data["input"][key] + data["output"][key]) for key in data["input"]]
     else:
         raise ValueError("Invalid label")
     return texts
@@ -53,14 +60,14 @@ test_data = (
 )
 
 # Save datasets to JSONL files
-os.makedirs('./datasets/face2_zh_split2', exist_ok=True)
+os.makedirs('./datasets/face2_zh_split', exist_ok=True)
 for dataset, filename in [
     (train_data, 'train.jsonl'),
     (val_data, 'val.jsonl'),
     (test_data, 'test.jsonl')
 ]:
-    with open(f'./datasets/face2_zh_split2/{filename}', 'w', encoding='utf-8') as f:
+    with open(f'./datasets/face2_zh_split/{filename}', 'w', encoding='utf-8') as f:
         for item in dataset:
             f.write(json.dumps(item, ensure_ascii=False) + '\n')
 
-print("Preprocessing complete. Datasets saved to ./datasets/face2_zh_split2.")
+print("Preprocessing complete. Datasets saved to ./datasets/face2_zh_split.")
