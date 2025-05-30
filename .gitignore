@@ -2,11 +2,11 @@
 datasets
 
 ### Pretrained and Fine-tuned Models ###
-pretrained
-finetuned
-checkpoints
+supervised/pretrained
+supervised/finetuned
+supervised/checkpoints
 
 ### Helper Files ###
-prompt.py
-prompt.txt
-*.sh
+**/prompt.py
+**/prompt.txt
+**/*.sh

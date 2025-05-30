@@ -4,7 +4,7 @@ import json
 from sklearn.model_selection import train_test_split
 
 def load_domain_data(domain):
-    base_path = f'./datasets/ghostbuster-data_reformed/{domain}'
+    base_path = f'./../datasets/ghostbuster-data_reformed/{domain}'
     human_files = glob.glob(f'{base_path}/human/*.txt')
     subfolders = [f for f in os.listdir(base_path) if os.path.isdir(os.path.join(base_path, f)) and f != 'human']
     llm_files = []
@@ -33,19 +33,19 @@ train_data, val_data = train_test_split(
 # Load wp data for testing (OOD)
 test_data = load_domain_data('wp')
 
-os.makedirs('./datasets/ghostbuster-data_split', exist_ok=True)
+os.makedirs('./../datasets/ghostbuster-data_split', exist_ok=True)
 
 # Save datasets to JSON lines files
-with open('./datasets/ghostbuster-data_split/train.jsonl', 'w') as f:
+with open('./../datasets/ghostbuster-data_split/train.jsonl', 'w') as f:
     for item in train_data:
         f.write(json.dumps(item) + '\n')
 
-with open('./datasets/ghostbuster-data_split/val.jsonl', 'w') as f:
+with open('./../datasets/ghostbuster-data_split/val.jsonl', 'w') as f:
     for item in val_data:
         f.write(json.dumps(item) + '\n')
 
-with open('./datasets/ghostbuster-data_split/test.jsonl', 'w') as f:
+with open('./../datasets/ghostbuster-data_split/test.jsonl', 'w') as f:
     for item in test_data:
         f.write(json.dumps(item) + '\n')
 
-print("Preprocessing complete. Datasets saved as train.jsonl, val.jsonl, and test.jsonl to ./datasets/ghostbuster-data_split.")
+print("Preprocessing complete. Datasets saved as train.jsonl, val.jsonl, and test.jsonl to ./../datasets/ghostbuster-data_split.")

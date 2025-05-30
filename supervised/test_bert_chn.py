@@ -5,8 +5,8 @@ from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_sc
 from scipy.special import softmax
 
 # Load datasets
-val_dataset = load_dataset('json', data_files='./datasets/face2_zh_split/val.jsonl')['train']
-test_dataset = load_dataset('json', data_files='./datasets/face2_zh_split/test.jsonl')['train']
+val_dataset = load_dataset('json', data_files='./../datasets/face2_zh_split/val.jsonl')['train']
+test_dataset = load_dataset('json', data_files='./../datasets/face2_zh_split/test.jsonl')['train']
 
 # Load tokenizer and fine-tuned model
 tokenizer = BertTokenizer.from_pretrained('./finetuned/bert-chn')

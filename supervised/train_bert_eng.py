@@ -5,8 +5,8 @@ from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_sc
 from scipy.special import softmax
 
 # Load datasets
-train_dataset = load_dataset('json', data_files='./datasets/ghostbuster-data_split/train.jsonl')['train']
-val_dataset = load_dataset('json', data_files='./datasets/ghostbuster-data_split/val.jsonl')['train']
+train_dataset = load_dataset('json', data_files='./../datasets/ghostbuster-data_split/train.jsonl')['train']
+val_dataset = load_dataset('json', data_files='./../datasets/ghostbuster-data_split/val.jsonl')['train']
 
 # Load tokenizer and model
 tokenizer = BertTokenizer.from_pretrained('./pretrained/bert-base-uncased')
