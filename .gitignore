@@ -2,7 +2,7 @@
 datasets
 
 ### Pretrained and Fine-tuned Models ###
-supervised/pretrained
+**/pretrained
 supervised/finetuned
 supervised/checkpoints
 
@@ -10,3 +10,12 @@ supervised/checkpoints
 **/prompt.py
 **/prompt.txt
 **/*.sh
+
+### Large Output Files ###
+zero-shot/preprocess_outputs
+zero-shot/nll_outputs
+zero-shot/fft_outputs
+
+### Python Cache ###
+__pycache__/
+*.pyc

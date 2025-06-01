@@ -1,0 +1,31 @@
+Evaluation of NLL-based zero-shot detection:
+
+Best k: 20, Validation Accuracy: 0.5458, Higher: human
+English Results:
+Accuracy: 0.5580134151562723
+Precision: 0.8497234912238519
+Recall: 0.5884115884115884
+F1: 0.6953271028037383
+AUROC: 0.469560243286517
+Best k: 20
+Higher: human
+
+Best k: 3, Validation Accuracy: 0.5635, Higher: model
+Chinese Results:
+Accuracy: 0.5559
+Precision: 0.7181889149102264
+Recall: 0.184
+F1: 0.2929469829644961
+AUROC: 0.65024344
+Best k: 3
+Higher: model
+
+Best k: 43, Validation Accuracy: 0.7033, Higher: human
+Multilingual Results:
+Accuracy: 0.6849337886233031
+Precision: 0.7171094971039809
+Recall: 0.9169997648718552
+F1: 0.8048289738430584
+AUROC: 0.33338054701108877
+Best k: 43
+Higher: human

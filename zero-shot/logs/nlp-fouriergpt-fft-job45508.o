@@ -1,0 +1,31 @@
+Running: python run_fft.py -i ./nll_outputs/train_human_eng.nll.txt -o ./fft_outputs/train_human_eng.nll.nllzs.fftnorm.txt -p zscore --value norm
+[DONE] train_human_eng.nll.nllzs.fftnorm.txt generated.
+Running: python run_fft.py -i ./nll_outputs/train_model_eng.nll.txt -o ./fft_outputs/train_model_eng.nll.nllzs.fftnorm.txt -p zscore --value norm
+[DONE] train_model_eng.nll.nllzs.fftnorm.txt generated.
+Running: python run_fft.py -i ./nll_outputs/val_human_eng.nll.txt -o ./fft_outputs/val_human_eng.nll.nllzs.fftnorm.txt -p zscore --value norm
+[DONE] val_human_eng.nll.nllzs.fftnorm.txt generated.
+Running: python run_fft.py -i ./nll_outputs/val_model_eng.nll.txt -o ./fft_outputs/val_model_eng.nll.nllzs.fftnorm.txt -p zscore --value norm
+[DONE] val_model_eng.nll.nllzs.fftnorm.txt generated.
+Running: python run_fft.py -i ./nll_outputs/test_eng.nll.txt -o ./fft_outputs/test_eng.nll.nllzs.fftnorm.txt -p zscore --value norm
+[DONE] test_eng.nll.nllzs.fftnorm.txt generated.
+Running: python run_fft.py -i ./nll_outputs/train_human_chn.nll.txt -o ./fft_outputs/train_human_chn.nll.nllzs.fftnorm.txt -p zscore --value norm
+[DONE] train_human_chn.nll.nllzs.fftnorm.txt generated.
+Running: python run_fft.py -i ./nll_outputs/train_model_chn.nll.txt -o ./fft_outputs/train_model_chn.nll.nllzs.fftnorm.txt -p zscore --value norm
+[DONE] train_model_chn.nll.nllzs.fftnorm.txt generated.
+Running: python run_fft.py -i ./nll_outputs/val_human_chn.nll.txt -o ./fft_outputs/val_human_chn.nll.nllzs.fftnorm.txt -p zscore --value norm
+[DONE] val_human_chn.nll.nllzs.fftnorm.txt generated.
+Running: python run_fft.py -i ./nll_outputs/val_model_chn.nll.txt -o ./fft_outputs/val_model_chn.nll.nllzs.fftnorm.txt -p zscore --value norm
+[DONE] val_model_chn.nll.nllzs.fftnorm.txt generated.
+Running: python run_fft.py -i ./nll_outputs/test_chn.nll.txt -o ./fft_outputs/test_chn.nll.nllzs.fftnorm.txt -p zscore --value norm
+[DONE] test_chn.nll.nllzs.fftnorm.txt generated.
+Running: python run_fft.py -i ./nll_outputs/train_human_mul.nll.txt -o ./fft_outputs/train_human_mul.nll.nllzs.fftnorm.txt -p zscore --value norm
+[DONE] train_human_mul.nll.nllzs.fftnorm.txt generated.
+Running: python run_fft.py -i ./nll_outputs/train_model_mul.nll.txt -o ./fft_outputs/train_model_mul.nll.nllzs.fftnorm.txt -p zscore --value norm
+[DONE] train_model_mul.nll.nllzs.fftnorm.txt generated.
+Running: python run_fft.py -i ./nll_outputs/val_human_mul.nll.txt -o ./fft_outputs/val_human_mul.nll.nllzs.fftnorm.txt -p zscore --value norm
+[DONE] val_human_mul.nll.nllzs.fftnorm.txt generated.
+Running: python run_fft.py -i ./nll_outputs/val_model_mul.nll.txt -o ./fft_outputs/val_model_mul.nll.nllzs.fftnorm.txt -p zscore --value norm
+[DONE] val_model_mul.nll.nllzs.fftnorm.txt generated.
+Running: python run_fft.py -i ./nll_outputs/test_mul.nll.txt -o ./fft_outputs/test_mul.nll.nllzs.fftnorm.txt -p zscore --value norm
+[DONE] test_mul.nll.nllzs.fftnorm.txt generated.
+All FFT computations completed.
