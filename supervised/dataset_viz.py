@@ -14,7 +14,7 @@ dataset_folders = [
 ]
 
 DATA_ROOT = '../datasets'
-VIZ_ROOT = './viz/datasets'
+VIZ_ROOT = './viz/dataset'
 
 def load_jsonl(path):
     data = []
