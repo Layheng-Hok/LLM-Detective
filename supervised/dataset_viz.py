@@ -13,8 +13,8 @@ dataset_folders = [
     'mul_split'
 ]
 
-DATA_ROOT = './datasets'
-VIZ_ROOT = './viz'
+DATA_ROOT = '../datasets'
+VIZ_ROOT = './viz/datasets'
 
 def load_jsonl(path):
     data = []
