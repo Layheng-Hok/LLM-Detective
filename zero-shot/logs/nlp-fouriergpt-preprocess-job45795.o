@@ -1,0 +1,16 @@
+Written 1601 lines to ./preprocess_outputs/train_human_eng.txt
+Written 1602 lines to ./preprocess_outputs/train_model_eng.txt
+Written 401 lines to ./preprocess_outputs/val_human_eng.txt
+Written 400 lines to ./preprocess_outputs/val_model_eng.txt
+Written 4004 lines to ./preprocess_outputs/test_eng.txt
+Written 4000 lines to ./preprocess_outputs/train_human_chn.txt
+Written 4000 lines to ./preprocess_outputs/train_model_chn.txt
+Written 1000 lines to ./preprocess_outputs/val_human_chn.txt
+Written 1000 lines to ./preprocess_outputs/val_model_chn.txt
+Written 10000 lines to ./preprocess_outputs/test_chn.txt
+Written 5601 lines to ./preprocess_outputs/train_human_mul.txt
+Written 5602 lines to ./preprocess_outputs/train_model_mul.txt
+Written 1401 lines to ./preprocess_outputs/val_human_mul.txt
+Written 1400 lines to ./preprocess_outputs/val_model_mul.txt
+Written 14004 lines to ./preprocess_outputs/test_mul.txt
+Text extraction complete. Files saved to: ./preprocess_outputs

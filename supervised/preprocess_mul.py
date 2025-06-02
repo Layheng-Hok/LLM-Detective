@@ -1,6 +1,7 @@
 import os
 import glob
 import json
+import random
 from sklearn.model_selection import train_test_split
 
 def clean_text(text):
@@ -8,7 +9,7 @@ def clean_text(text):
     text = text.replace("\n", " ").replace("\r", " ").replace("\t", " ")
     return text
 
-def load_english_domain(domain):
+def load_english_domain(domain, balance=False):
     base_path = f'./../datasets/ghostbuster-data_reformed/{domain}'
     human_files = glob.glob(f'{base_path}/human/*.txt')
     subfolders = [f for f in os.listdir(base_path) if os.path.isdir(os.path.join(base_path, f)) and f != 'human']
@@ -24,6 +25,13 @@ def load_english_domain(domain):
         with open(file, 'r', encoding='utf-8') as f:
             text = f.read()
             data.append({'text': text, 'label': 1})
+    if balance:
+        human_data = [d for d in data if d['label'] == 0]
+        llm_data = [d for d in data if d['label'] == 1]
+        if len(llm_data) > len(human_data):
+            llm_data = random.sample(llm_data, len(human_data))
+        data = human_data + llm_data
+        random.shuffle(data)
     return data
 
 def load_chinese_domain(domain):
@@ -48,8 +56,8 @@ def load_chinese_domain(domain):
     data = [{'text': text, 'label': 0} for text in human_texts] + [{'text': text, 'label': 1} for text in generated_texts]
     return data
 
-# Load English 'essay' and Chinese 'news' for training
-english_train_data = load_english_domain('essay')
+# Load English 'essay' and Chinese 'news' for training with balancing
+english_train_data = load_english_domain('essay', balance=True)
 chinese_train_data = load_chinese_domain('news')
 train_data_combined = english_train_data + chinese_train_data
 
@@ -61,8 +69,8 @@ train_data, val_data = train_test_split(
     random_state=42
 )
 
-# Load English 'wp' and Chinese 'wiki' for testing
-english_test_data = load_english_domain('wp')
+# Load English 'wp' and Chinese 'wiki' for testing with balancing
+english_test_data = load_english_domain('wp', balance=True)
 chinese_test_data = load_chinese_domain('wiki')
 test_data = english_test_data + chinese_test_data
 
