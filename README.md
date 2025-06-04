@@ -50,8 +50,6 @@ Performance is assessed using:
 - F1 Score
 - Area Under the ROC Curve (AUROC)
 
-The source code for this project is available at [https://github.com/Layheng-Hok/LLM-Detective](https://github.com/Layheng-Hok/LLM-Detective).
-
 ## Results
 
 The table below summarizes the performance of both methods across the datasets.
