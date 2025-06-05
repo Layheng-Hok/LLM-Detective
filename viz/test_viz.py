@@ -8,9 +8,9 @@ os.makedirs(output_dir, exist_ok=True)
 
 # Full names for datasets
 log_paths = {
-    'English': './logs/nlp-test-bert-eng-job45830.o',
-    'Chinese': './logs/nlp-test-bert-chn-job44179.o',
-    'Multilingual': './logs/nlp-test-bert-mul-job45829.o'
+    'English': './supervised/logs/nlp-test-bert-eng-job45830.o',
+    'Chinese': './supervised/logs/nlp-test-bert-chn-job44179.o',
+    'Multilingual': './supervised/logs/nlp-test-bert-mul-job45829.o'
 }
 
 # Regex to extract final result line

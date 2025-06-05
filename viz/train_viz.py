@@ -6,9 +6,9 @@ import matplotlib.pyplot as plt
 
 # === Log file paths ===
 log_files = {
-    "English": "./logs/nlp-train-bert-eng-job45791.o",
-    "Chinese": "./logs/nlp-train-bert-chn-job44165.o",
-    "Multilingual": "./logs/nlp-train-bert-mul-job45792.o",
+    "English": "./supervised/logs/nlp-train-bert-eng-job45791.o",
+    "Chinese": "./supervised/logs/nlp-train-bert-chn-job44165.o",
+    "Multilingual": "./supervised/logs/nlp-train-bert-mul-job45792.o",
 }
 
 # === Regular expression to extract JSON-like lines ===
